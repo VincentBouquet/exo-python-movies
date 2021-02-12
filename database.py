@@ -12,17 +12,17 @@ db = connector.connect(
 )
 cursor = db.cursor(dictionary=True)
 
-query = "SELECT * FROM films WHERE title LIKE %(title_to_find)s"
+query = "SELECT imdb_id,title FROM films WHERE title LIKE %(title_to_find)s"
 
-cursor.execute(query, {"title_to_find": "%star%"})
-
-# films = cursor.fetchall()
-# print(films[2])
-
-while True:
-    films = cursor.fetchone()
-    if films == None:
-        break
-    else:
-        # print(user)
-        print(films['title'])
+# cursor.execute(query, {"title_to_find": "%star%"})
+#
+# # films = cursor.fetchall()
+# # print(films[2])
+#
+# while True:
+#     films = cursor.fetchone()
+#     if films == None:
+#         break
+#     else:
+#         # print(user)
+#         print(films['title'])
